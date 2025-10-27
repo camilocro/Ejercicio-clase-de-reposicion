@@ -60,5 +60,13 @@ namespace Security.Controllers
             }
             return NoContent();
         }
+
+        [HttpGet("publicos")]
+        [AllowAnonymous]
+        public async Task<IActionResult> GetPublicHospitals()
+        {
+            IEnumerable<Hospital> items = await _service.GetPublicHospitals();
+            return Ok(items);
+        }
     }
 }

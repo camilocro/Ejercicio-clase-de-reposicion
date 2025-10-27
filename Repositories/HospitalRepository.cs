@@ -41,5 +41,11 @@ namespace Security.Repositories
                 await _db.SaveChangesAsync();
             }
         }
+        public async Task<IEnumerable<Hospital>> GetPublicHospitals()
+        {
+            return await _db.Hospitals
+                .Where(h => h.Type == 1 || h.Type == 3)
+                .ToListAsync();
+        }
     }
 }

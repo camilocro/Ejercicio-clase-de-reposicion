@@ -10,5 +10,6 @@ namespace Security.Services
         Task<Hospital> CreateHospital(CreateHospitalDto dto);
         Task<bool> UpdateHospital(Guid id, UpdateHospitalDto dto);
         Task<bool> DeleteHospital(Guid id);
+        Task<IEnumerable<Hospital>> GetPublicHospitals();
     }
 }

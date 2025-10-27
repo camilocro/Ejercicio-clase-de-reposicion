@@ -60,5 +60,9 @@ namespace Security.Services
             await _repo.Delete(id);
             return true;
         }
+        public async Task<IEnumerable<Hospital>> GetPublicHospitals()
+        {
+            return await _repo.GetPublicHospitals();
+        }
     }
 }
